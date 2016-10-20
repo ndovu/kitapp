@@ -11,12 +11,19 @@
   </tr>
 </table>
 
-<%= simple_form_for @bag do |f| %>
-  <%= f.input :adv %>
-  <%= f.input :description %>
-  <%= f.input :link %>
-  <%= f.button :submit %>
-<% end %>
+<div class="kit-edit-form">
+  <%= simple_form_for @bag do |f| %>
+    <%= f.input :adv %>
+    <%= f.input :description %>
+    <%= f.input :link %>
+    <%= f.button :submit, "save" %>
+  <% end %> 
+  <%= link_to "cancel", url: bags_path %> 
+  <%= link_to 'delete', bag_path(@bag),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+</div>
+
 
 <table>
   <tr>
@@ -31,3 +38,4 @@
   </tr>
 </table>
 <p><i> <%= link_to 'mykit', welcome_index_path %> </i></p>
+<p><i> <%= link_to 'new kit', new_bag_path %> </i></p>

@@ -9,10 +9,13 @@
   </tr>
   <% @bags.each do |bag| %>
     <tr>
-      <td><%= bag.adv %></td>
+      <td><%= link_to bag.adv, bag %></td>
       <td><%= bag.description %></td>
       <td><%= bag.link %></td>
     </tr>
   <% end %>
 </table>
-<p><i> <%= link_to 'mykit', welcome_index_path %> </i></p>
+<p>
+  <i> <%= link_to 'mykit', welcome_index_path %> </i>|
+  <i> <%= link_to 'new kit', new_bag_path %> </i>
+</p>

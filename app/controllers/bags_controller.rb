@@ -24,6 +24,13 @@ class BagsController < ApplicationController
     end
   end
 
+  def destroy
+    @bag = Bag.find(params[:id])
+    @bag.destroy
+ 
+    redirect_to bags_path
+  end
+
   def show
     @bag = Bag.find(params[:id])
   end
