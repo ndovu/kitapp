@@ -18,10 +18,15 @@
     <%= f.input :link %>
     <%= f.button :submit, "save" %>
   <% end %> 
-  <%= link_to "cancel", url: bags_path %> 
-  <%= link_to 'delete', bag_path(@bag),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %>
+  <i> 
+    <%= link_to "cancel", bag_path %> 
+  </i>
+  |
+  <i>
+    <%= link_to 'delete kit', bag_path(@bag),
+                method: :delete,
+                data: { confirm: 'are you sure? this is a one way trip...' } %>
+  </i>
 </div>
 
 
@@ -38,4 +43,3 @@
   </tr>
 </table>
 <p><i> <%= link_to 'mykit', welcome_index_path %> </i></p>
-<p><i> <%= link_to 'new kit', new_bag_path %> </i></p>

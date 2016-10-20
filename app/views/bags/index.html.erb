@@ -5,13 +5,13 @@
   <tr>
     <th>adventure</th>
     <th>description</th>
-    <th>link</th>
+    <!-- <th>link</th> -->
   </tr>
   <% @bags.each do |bag| %>
     <tr>
       <td><%= link_to bag.adv, bag %></td>
       <td><%= bag.description %></td>
-      <td><%= bag.link %></td>
+      <!-- <td><%= bag.link %></td> -->
     </tr>
   <% end %>
 </table>

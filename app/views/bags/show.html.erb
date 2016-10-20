@@ -1,6 +1,18 @@
 <!-- kit show -->
-<h2><a href="<%= @bag.link %>"><%= @bag.adv %></a><strong> <i>kit</i></strong></h2><p><%= @bag.description %></p>
-<%= link_to 'edit', edit_bag_path %>
+<h2>
+  <a href="<%= @bag.link %>"><%= @bag.adv %></a><strong> <i>kit</i></strong>
+</h2>
+<i>
+<%= @bag.description %>
+</i>
+
+
+<div class="kit-inventory">
+  <h3>inventory</h3>
+
+</div>
+
+
 <table>
   <tr>
     <th>created</th>
@@ -10,4 +22,16 @@
   <td><%= @bag.updated_at %></td> 
 </table>
 <p></p>
-<p><i><%= link_to 'kit exchange', bags_path %></i></p>
+<div class="nav-btm">
+  <p>
+    <i>
+      <%= link_to 'kit exchange', bags_path %> 
+    </i> 
+    |
+    <i>
+      <%= link_to 'mykit', welcome_index_path %>  
+    </i>
+    
+  </p>
+</div>
+
