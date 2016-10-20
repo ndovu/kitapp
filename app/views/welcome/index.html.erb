@@ -1,6 +1,9 @@
 <h2>my<strong><i>kit</i></strong></h2>
-<%= current_user.id %>
+<i><%= current_user.email %></i>
 
-<h3>equipped kits</h3>
-<p><i><%= link_to 'make a kit', new_bag_path %></i></p>
-<p><i><%= link_to 'kit exchange', bags_path %></i></p>
+<h3>inventory</h3>
+list equipped or saved kits in list
+
+<p>
+  <i><%= link_to 'new kit', new_bag_path %></i> | <i><%= link_to 'kit exchange', bags_path %></i>  
+</p>
