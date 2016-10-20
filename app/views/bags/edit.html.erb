@@ -13,10 +13,10 @@
 
 <div class="kit-edit-form">
   <%= simple_form_for @bag do |f| %>
-    <%= f.input :adv %>
-    <%= f.input :description %>
-    <%= f.input :link %>
-    <%= f.button :submit, "save" %>
+    <%= f.input :adv, label: 'adventure' %>
+    <%= f.input :description, label: 'description' %>
+    <%= f.input :link, label: 'link' %>
+    <%= f.button :submit, 'save' %>
   <% end %> 
   <i> 
     <%= link_to "cancel", bag_path %> 
