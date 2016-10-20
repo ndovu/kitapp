@@ -1,0 +1,33 @@
+<table>
+  <tr>
+    <td>
+      <h2>edit <strong><i>kit</i></strong></h2>  
+    </td> 
+  </tr>
+  <tr>
+    <td>
+      <h6>last repacked <%= @bag.updated_at %></h6>
+    </td>
+  </tr>
+</table>
+
+<%= simple_form_for @bag do |f| %>
+  <%= f.input :adv %>
+  <%= f.input :description %>
+  <%= f.input :link %>
+  <%= f.button :submit %>
+<% end %>
+
+<table>
+  <tr>
+    <th>adv</th>
+    <th>desc</th>
+    <th>link</th>  
+  </tr>
+  <tr>
+    <td><%= @bag.adv %></td>>
+    <td><%= @bag.description %></td>>
+    <td><%= @bag.link %></td>>
+  </tr>
+</table>
+<p><i> <%= link_to 'mykit', welcome_index_path %> </i></p>

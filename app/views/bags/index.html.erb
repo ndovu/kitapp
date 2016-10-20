@@ -1,0 +1,18 @@
+<!-- kit index -->
+<h2>my<strong><i>kit</i></strong></h2>
+<p>pick your next adventure!<p>
+<table>
+  <tr>
+    <th>adventure</th>
+    <th>description</th>
+    <th>link</th>
+  </tr>
+  <% @bags.each do |bag| %>
+    <tr>
+      <td><%= bag.adv %></td>
+      <td><%= bag.description %></td>
+      <td><%= bag.link %></td>
+    </tr>
+  <% end %>
+</table>
+<p><i> <%= link_to 'mykit', welcome_index_path %> </i></p>

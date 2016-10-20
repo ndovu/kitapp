@@ -1,0 +1,13 @@
+<!-- kit show -->
+<h2><a href="<%= @bag.link %>"><%= @bag.link %></a><strong> <i>kit</i></strong></h2><p><%= @bag.description %></p>
+<%= link_to 'edit', edit_bag_path %>
+<table>
+  <tr>
+    <th>created</th>
+    <th>updated</th>
+  </tr> 
+  <td><%= @bag.created_at %></td> 
+  <td><%= @bag.updated_at %></td> 
+</table>
+<p></p>
+<p> <%= link_to 'kit exchange', bags_path %> </p>

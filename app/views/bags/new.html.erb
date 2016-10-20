@@ -1,0 +1,23 @@
+<!-- kit new -->
+<h2>create <strong><i>kit</i></strong></h2>
+<div class="kit-new-form">
+  <%= simple_form_for @bag do |f| %>
+    <%= f.label :adv, 'short description of your kit' %>
+    <%= f.input :description, label: false, placeholder: 'discoverying my third eye through fly fishing :P' %>
+    <%= f.label :adv, 'what was the purpose of this kit?' %>
+    <!-- maybe use amazon search of top self help topics for hint? -->
+    <%= f.input :adv, required: true, label: false, placeholder: 'better travel, simpler love, less money, better exercise...' %>
+    <%= f.label :link, 'link?' %>
+    <%= f.input :link, label: false, placeholder: 'reddit.com/r/sailing'%>
+    <%= f.button :submit, 'save kit' %>
+  <% end %>  
+</div>
+
+<div class="nav-btm">
+  <ul>
+    <li><%= link_to 'kit exchange', bags_path %></li>
+    <li><%= link_to 'mykit', welcome_index_path %></li>
+  </ul>
+</div>
+
+

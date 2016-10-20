@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <title>kit</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <%= yield %>  
+</body>
+<!-- <i> <%= link_to 'mykit', welcome_index_path %> </i> -->
+</html>
