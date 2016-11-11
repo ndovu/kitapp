@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   
-  resources :bags
+  resources :bags do
+    resources :tools, only: [:create, :destroy]
+  end
+
+  resources :tools, only: [:index]
   
   devise_for :admins
 

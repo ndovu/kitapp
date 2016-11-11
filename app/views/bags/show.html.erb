@@ -14,20 +14,28 @@
 
 <div class="kit-inventory">
   <h3>inventory</h3>
-  <h4>essential tools ☆ </h4>
+<!--   <h4>essential tools ☆ </h4>
   <ul class="kit-essential-tools">
     <li>tobereplaced</li>
     <li>tool 1</li>
     <li>tool 2</li>
     <li>tool 3</li>
-  </ul>
+  </ul> -->
   <!-- Create option for grouping/tagging later. -->
-  <h4>general tools</h4>
+  <!-- <h4>general tools</h4>
   <ul class="kit-general-tools">
     <li>tobereplaced</li>
     <li>tool 4</li>
     <li>tool 5</li>
-  </ul>
+  </ul> -->
+
+  <% @bag.tools.each do |tool| %>
+    <tr>
+      <td><%= tool %></td>
+      <!-- <td><%= bag.link %></td> -->
+    </tr>
+  <% end %>
+  <p><%= @bag.tools.count %> tools total</p>  
 </div>
 
 <table>

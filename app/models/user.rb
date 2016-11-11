@@ -14,6 +14,9 @@ class User < ActiveRecord::Base
     end
   end
 
+  has_many :bags, dependent: :destroy
+  has_many :tooled_bags, through: :tools, source: :bag
+
 end
 
 

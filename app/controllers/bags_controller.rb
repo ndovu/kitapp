@@ -1,4 +1,7 @@
 class BagsController < ApplicationController
+
+  before_action :authenticate_user!
+
   def new
     @bag = Bag.new
   end
@@ -33,6 +36,7 @@ class BagsController < ApplicationController
 
   def show
     @bag = Bag.find(params[:id])
+    @tool = @bag.tool_for(current_user) if user_signed_in?
   end
 
   def index
