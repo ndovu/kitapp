@@ -4,12 +4,14 @@
     <%= link_to current_user.email %>
     <%= render 'users/inventory' %>
   </p>
-  <%= link_to 'new kit', new_bag_path %></i> | <i><%= link_to 'kit exchange', bags_path %>
+  <%= link_to 'new kit', new_bag_path %> | 
+  <%= link_to 'kit exchange', bags_path %> |
+  <%= link_to 'sign out', sign_out_path %>
 <% else %>
   welcome! would you like to...
   <ul class="hmenu">
       <%= render 'devise/menu/registration_items' %> |
-      <%= render 'devise/menu/login_items' %>
+      <%= render 'devise/menu/login_items' %> |
   </ul>
   <h3>newest kits</h3>
   show newest kits
