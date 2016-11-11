@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   resources :bags do
-    resources :tools, only: [:create, :destroy]
+    resources :tools #, only: [:create, :destroy]
   end
 
   resources :tools, only: [:index]

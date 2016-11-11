@@ -1,0 +1,13 @@
+<div class="kit-inventory">
+  <h3>inventory</h3>
+  <% @tools.each do |tool| %>
+    <tr>
+      <td><%= link_to tool.name, tool %></td>
+      <td><%= tool.desc %></td>
+      <!-- <td><%= bag.link %></td> -->
+    </tr>
+  <% end %>
+  <p><%= @tools.count %> tools total</p> 
+  <%= link_to 'add tool', new_bag_tool_path %>
+</div>
+
