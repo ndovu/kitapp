@@ -1,0 +1,31 @@
+<!-- kit new -->
+<h2>add tools to your <strong><i>kit</i></strong></h2>
+<div class="tool-new-form">
+  <%= simple_form_for @tool do |f| %>
+    <%= f.label :name, 'name of tool?' %>
+    <%= f.input :name, label: false, placeholder: 'pocket knife' %>
+    <!-- Maybe change to hover over for hints in future -->
+    <%= f.label :description, 'tool description?' %>
+    <!-- Maybe use amazon search of top self help topics for hint? -->
+    <%= f.input :description, required: true, label: false, placeholder: 'skookum multitool from leatherman' %>
+    <%= f.label :link, 'link?' %>
+    <%= f.input :link, label: false, placeholder: 'reddit.com/r/diy'%>
+    <!-- On click, change text to ty and a happy colour like orange juice -->
+    <%= f.button :submit, 'add tool to kit' %>
+  <% end %>  
+</div>
+
+<div class="nav-btm">
+  <p>
+    <i>
+      <%= link_to 'kit exchange', bags_path %> 
+    </i> 
+    |
+    <i>
+      <%= link_to 'mykit', welcome_index_path %>  
+    </i>
+    
+  </p>
+</div>
+
+
