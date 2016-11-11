@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161111054622) do
+ActiveRecord::Schema.define(version: 20161111152612) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(version: 20161111054622) do
     t.integer  "bag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "link"
+    t.string   "desc"
   end
 
   add_index "tools", ["bag_id"], name: "index_tools_on_bag_id", using: :btree
