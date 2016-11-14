@@ -11,52 +11,33 @@
     </button>
 </a>
 
-
 <div class="kit-inventory">
   <h3>inventory</h3>
-<!--   <h4>essential tools ☆ </h4>
-  <ul class="kit-essential-tools">
-    <li>tobereplaced</li>
-    <li>tool 1</li>
-    <li>tool 2</li>
-    <li>tool 3</li>
-  </ul> -->
-  <!-- Create option for grouping/tagging later. -->
-  <!-- <h4>general tools</h4>
-  <ul class="kit-general-tools">
-    <li>tobereplaced</li>
-    <li>tool 4</li>
-    <li>tool 5</li>
-  </ul> -->
-
-  <% @bag.tools.each do |tool| %>
+  <% @bag.tools.each do |tool, i| %>
     <tr>
-      <td><%= tool %></td>
-      <!-- <td><%= bag.link %></td> -->
+      <!-- not sure why it isn't showing a numbered list here -->
+      <td><%= i %>-</td> 
+      <td><%= tool.name %></td><br>
     </tr>
   <% end %>
   <p><%= @bag.tools.count %> tools total</p>  
 </div>
 
-<table>
-  <tr>
-    <th>created</th>
-    <th>updated</th>
-  </tr> 
-  <td><%= @bag.created_at %></td> 
-  <td><%= @bag.updated_at %></td> 
-</table>
-<p></p>
-<div class="nav-btm">
+<%= form_for ([@bag, @bag.tools.build]) do |f| %>
   <p>
-    <i>
-      <%= link_to 'kit exchange', bags_path %> 
-    </i> 
-    |
-    <i>
-      <%= link_to 'mykit', welcome_index_path %>  
-    </i>
-    
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
   </p>
-</div>
+  <p>
+    <%= f.label :link %><br>  
+    <%= f.text_field :link %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= render 'bags/details' %>
+
+<%= render 'bags/navbtm' %>
 

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :tools #, only: [:create, :destroy]
   end
 
-  resources :tools, only: [:index]
+  resources :tools
   
   devise_for :admins
 
