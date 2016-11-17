@@ -1,12 +1,14 @@
 <h2>my<strong><i>kit</i></strong></h2>
 <% if user_signed_in? %>
   <p>
-    <%= link_to current_user.email %>
+    <%= link_to current_user.email %><br>
+    <%= image_tag(current_user.avatar) %>
     <%= render 'users/inventory' %>
   </p>
   <%= link_to 'new kit', new_bag_path %> | 
   <%= link_to 'kit exchange', bags_path %> |
-  <%= link_to 'sign out', sign_out_path %>
+  <%= link_to 'sign out', sign_out_path %> |
+  <%= render 'devise/menu/registration_items' %>
 <% else %>
   welcome! would you like to...
   <ul class="hmenu">
@@ -16,8 +18,3 @@
   <h3>newest kits</h3>
   show newest kits
 <% end %>
-
-<!-- <ul class="hmenu">
-    <%= render 'devise/menu/registration_items' %>
-    <%= render 'devise/menu/login_items' %>
-</ul> -->
