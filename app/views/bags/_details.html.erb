@@ -6,5 +6,5 @@
   </tr> 
   <td><%= @bag.created_at %></td> 
   <td><%= @bag.updated_at %></td> 
-  <td><%= @bag.user.email %></td> 
+  <td><%= @bag.user.email unless @bag.user %></td> 
 </table>
