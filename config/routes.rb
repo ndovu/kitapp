@@ -4,7 +4,11 @@ Rails.application.routes.draw do
     resources :tools #, only: [:create, :destroy]
   end
 
-  resources :tools
+  resources :tools do
+    resources :essentials, only: [:create, :destroy]
+  end
+
+  resources :essentials, only: [:index]
   
   devise_for :admins
 

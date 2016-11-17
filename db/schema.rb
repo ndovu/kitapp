@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161117042221) do
+ActiveRecord::Schema.define(version: 20161117222156) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,16 @@ ActiveRecord::Schema.define(version: 20161117042221) do
 
   add_index "bags", ["user_id"], name: "index_bags_on_user_id", using: :btree
 
+  create_table "essentials", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "tool_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "essentials", ["tool_id"], name: "index_essentials_on_tool_id", using: :btree
+  add_index "essentials", ["user_id"], name: "index_essentials_on_user_id", using: :btree
+
   create_table "tools", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "bag_id"
@@ -74,6 +84,8 @@ ActiveRecord::Schema.define(version: 20161117042221) do
     t.string   "provider"
     t.string   "uid"
     t.integer  "bag_id"
+    t.string   "image"
+    t.string   "avatar"
   end
 
   add_index "users", ["bag_id"], name: "index_users_on_bag_id", using: :btree
@@ -81,6 +93,8 @@ ActiveRecord::Schema.define(version: 20161117042221) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "bags", "users"
+  add_foreign_key "essentials", "tools"
+  add_foreign_key "essentials", "users"
   add_foreign_key "tools", "bags"
   add_foreign_key "tools", "users"
   add_foreign_key "users", "bags"
