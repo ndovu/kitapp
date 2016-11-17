@@ -2,7 +2,9 @@
   <tr>
     <th>created</th>
     <th>updated</th>
+    <th>crafted by</th>
   </tr> 
   <td><%= @bag.created_at %></td> 
   <td><%= @bag.updated_at %></td> 
+  <td><%= @bag.user.email %></td> 
 </table>

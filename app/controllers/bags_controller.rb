@@ -12,7 +12,7 @@ class BagsController < ApplicationController
 
   def create
     @bag = Bag.new(bag_params)
-    
+    @bag.user = current_user
     @bag.save
     redirect_to @bag
   end
