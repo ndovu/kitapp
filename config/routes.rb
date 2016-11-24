@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :essentials, only: [:create, :destroy]
   end
 
-  resources :essentials, only: [:index]
+  resources :essentials, only: [:create, :destroy, :index]
   
   devise_for :admins
 
