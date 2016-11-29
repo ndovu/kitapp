@@ -16,7 +16,6 @@ gem 'rails_12factor', group: :production
 gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
 gem 'font-awesome-rails'
 
-
 # For simple quick and secure user setup
 gem 'devise'
 

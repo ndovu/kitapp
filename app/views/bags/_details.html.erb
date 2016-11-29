@@ -5,6 +5,6 @@
     <th>crafted by</th>
   </tr> 
   <td><%= @bag.created_at %></td> 
-  <td><%= @bag.updated_at %></td> 
-  <td><%= @bag.user.email %></td> 
+  <td><%= @bag.updated_at %></td>
+  <td><% @bag.user.email if @bag.user %></td>
 </table>

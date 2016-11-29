@@ -18,7 +18,6 @@
       <!-- not sure why it isn't showing a numbered list here -->
       <td><%= i %>-</td> 
       <td><%= tool.name %></td><br>
-      <%= link_to fa_icon("star-o"), tool_essential_path(@user, tool.id), method: :post %>
     </tr>
   <% end %>
   <p><%= @bag.tools.count %> tools total</p>  
